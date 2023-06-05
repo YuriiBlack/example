@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary-color: #5cd360;
+  --dark-color: #f5f7fb;
+  --light-color: #293264;
+}
+
+body {
+  max-height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+  background-image: url(../img/yellow.svg), url(../img/blue.svg);
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  background-size: 400px;
+
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+
+* > * {
+  font-family: "Karla", "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 800px;
+  padding: 20px;
+}
+
+.container .title {
+  font-size: 3em;
+  text-align: center;
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+.container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.container .questions {
+  padding: 3em;
+}
+
+/*
+.container .questions .qid{
+  padding: .2em .7em;
+  color: #222222;
+  background-color: #0DFF92;
+  border-radius: 50px;
+} */
+
+.container .grid {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container .btn {
+  padding: 0.65em 1.7em;
+  border: none;
+  border-radius: 0.5em;
+  font-weight: 600;
+  font-size: 1.2em;
+  transition: transform 0.25s, box-shadow 0.15s;
+}
+
+.container .btn:hover {
+  cursor: pointer;
+  color: #202020;
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.1);
+}
+
+.next {
+  background-color: #deebf8;
+  justify-self: flex-end;
+}
+
+.prev {
+  background-color: #fffad1;
+  justify-self: flex-start;
+}
+
+ul li {
+  color: var(--light-color);
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #333;
+}
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+ul li label {
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 1.35em;
+  padding: 25px 25px 25px 80px;
+  margin: 10px auto;
+  height: 30px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+}
+/* 
+ul li:hover label {
+  color: #ffffff;
+} */
+
+ul li .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 5px solid var(--light-color);
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 30px;
+  left: 20px;
+  z-index: 5;
+  transition: border 0.25s linear;
+  -webkit-transition: border 0.25s linear;
+}
+
+ul li:hover .checked {
+  border: 5px solid #ffffff;
+}
+
+ul li .check::before {
+  display: block;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 13px;
+  width: 13px;
+  /* top: 5px;
+  left: 5px; */
+  margin: auto;
+  transition: background 0.25s linear;
+  -webkit-transition: background 0.25s linear;
+}
+
+input[type="radio"]:checked ~ .check {
+  border: 4px solid var(--primary-color);
+}
+
+input[type="radio"]:checked ~ .check::before {
+  background: var(--primary-color);
+}
+
+input[type="radio"]:checked ~ .text-primary {
+  color: var(--primary-color);
+}
+
+/* To get selected option we are using this checked class */
+.checked {
+  border: 5px solid var(--primary-color) !important;
+}
+
+.checked::before {
+  background: var(--primary-color);
+}
+
+.bold {
+  font-weight: 700;
+}

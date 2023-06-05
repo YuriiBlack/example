@@ -1,0 +1,40 @@
+.container ol li {
+    font-size: 1.4em;
+    color: var(--light-color);
+    text-align: center;
+    list-style: none;
+  }
+  
+  .start {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+  }
+  
+  .start .btn {
+    padding: 0.65em 1.7em;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #202020;
+    text-decoration: none;
+    background-color: #deebf8;
+  }
+  
+  #form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2.5em;
+    align-items: center;
+  }
+  
+  #form .userid {
+    padding: 0.7em 2em;
+    width: 50%;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+  }
+  
